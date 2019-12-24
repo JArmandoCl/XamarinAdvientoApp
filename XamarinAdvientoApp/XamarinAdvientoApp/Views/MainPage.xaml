@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinAdvientoApp.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XamarinAdvientoApp"
+    xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+    Title="Inicia sesión"
+    BackgroundImageSource="background.jpg">
+
+    <StackLayout>
+        <ui:MaterialTextField
+            AlwaysShowUnderline="True"
+            BackgroundColor="Transparent"
+            ErrorText="{Binding Usuario.MensajeError}"
+            HasError="{Binding Usuario.Error}"
+            HelperText="Campo obligatorio"
+            InputType="Text"
+            Placeholder="Usuario"
+            Text="{Binding Usuario.Nick}" />
+        <ui:MaterialTextField
+            AlwaysShowUnderline="True"
+            BackgroundColor="Transparent"
+            ErrorText="{Binding Usuario.MensajeError}"
+            HasError="{Binding Usuario.Error}"
+            HelperText="Campo obligatorio"
+            InputType="Password"
+            Placeholder="Contraseña"
+            Text="{Binding Usuario.Pass}" />
+        <ui:MaterialButton
+            BackgroundColor="#EAEAEA"
+            Command="{Binding LoginCommand}"
+            HorizontalOptions="Center"
+            Text="LOGIN"
+            TextColor="Black"
+            VerticalOptions="Center" />
+        <ui:MaterialChip
+            ActionImage="signup.png"
+            ActionImageTappedCommand="{Binding SignupCommand}"
+            BackgroundColor="Green"
+            HorizontalOptions="Center"
+            Text="Registrarme"
+            TextColor="White" />
+    </StackLayout>
+
+</ContentPage>
